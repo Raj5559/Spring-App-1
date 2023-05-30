@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+        
+<beans>
+
+	<bean class="com.example.in.ac.Demo1Bean" id="db1">
+		
+		<constructor-arg value="Raj"/>
+		<constructor-arg>
+			<list>
+				<value>Samsung</value>
+				<value>Apple</value>
+				<value>Banana</value>
+			</list>
+		</constructor-arg>
+		
+		<constructor-arg>
+			<list>
+				<value>KF</value>
+				<value>Budweiser</value>
+				<value>Tuborg</value>
+				<value>Carlsberg</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>raj@gmail.com</value>
+				<value>anushka@gmail.com</value>
+				<value>virat@gmail.com</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="1"><value>India</value></entry>
+				<entry key="2"><value>Ireland</value></entry>
+				<entry key="3"><value>Australia</value></entry>
+				
+			</map>
+		</constructor-arg>
+		
+		<constructor-arg>
+			<props>
+				<prop key="2345">Raj</prop>
+				<prop key="2341">Raju</prop>
+				<prop key="2342">Rajeev</prop>
+			</props>		
+		</constructor-arg>
+	</bean>
+
+</beans>
+
+
