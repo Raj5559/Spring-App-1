@@ -1,6 +1,7 @@
 package com.example.in.ac;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Demo1Client {
@@ -15,6 +16,7 @@ public class Demo1Client {
 		db.getAllMobiles();
 		db.getAllTrainers();
 		db.wish();
+		((AbstractApplicationContext)context).registerShutdownHook();
 	}
 
 }

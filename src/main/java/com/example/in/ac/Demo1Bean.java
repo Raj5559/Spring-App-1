@@ -7,7 +7,10 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-public class Demo1Bean implements Demo1 {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Demo1Bean implements Demo1 , InitializingBean, DisposableBean{
 
 	private String username;
 	private String[] mobiles;
@@ -15,6 +18,9 @@ public class Demo1Bean implements Demo1 {
 	private Set<String> emails;
 	private Map<Integer, String> countries;
 	private Properties trainers;
+	
+	
+	
 	
 	
 	public Demo1Bean() {
@@ -34,6 +40,16 @@ public class Demo1Bean implements Demo1 {
 		this.trainers = trainers;
 	}
 
+	
+	
+	public void initMethod() {
+		System.out.println("init() method executed");
+	}
+	
+	public void destroyMethod() {
+		System.out.println("destroy() method executed");
+	}
+	
 	@Override
 	public void wish() {
 		System.out.println("Welcome,"+username);
@@ -88,6 +104,22 @@ public class Demo1Bean implements Demo1 {
 			System.out.println("Country Name :"+countryName);
 		}
 		
+		
+	}
+
+
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("destroy() method from Disposable Bean");
+		
+	}
+
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("afterPropertiesSet() method Initializing Bean");
 		
 	}
 

@@ -5,7 +5,7 @@
         
 <beans>
 
-	<bean class="com.example.in.ac.Demo1Bean" id="db1">
+	<bean class="com.example.in.ac.Demo1Bean" id="db1" init-method="initMethod" destroy-method="destroyMethod">
 		
 		<constructor-arg value="Raj"/>
 		<constructor-arg>
